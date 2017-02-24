@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/fb4ea361-5c69-42af-a427-b501b0663296/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/NorthernHandyman</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -182,16 +211,132 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\agency.css" />
+    <Content Include="Content\css\agency.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\aboutlogo.jpg" />
+    <Content Include="Content\img\about\1.jpg" />
+    <Content Include="Content\img\about\2.jpg" />
+    <Content Include="Content\img\about\3.jpg" />
+    <Content Include="Content\img\about\4.jpg" />
+    <Content Include="Content\img\header-bg.jpg" />
+    <Content Include="Content\img\logos\aetuts.jpg" />
+    <Content Include="Content\img\logos\BuissnessCard.jpg" />
+    <Content Include="Content\img\logos\creative-market.jpg" />
+    <Content Include="Content\img\logos\designmodo.jpg" />
+    <Content Include="Content\img\logos\envato.jpg" />
+    <Content Include="Content\img\logos\LawnCare.PNG" />
+    <Content Include="Content\img\logos\microlancer.jpg" />
+    <Content Include="Content\img\logos\MowingScape.PNG" />
+    <Content Include="Content\img\logos\SkidSteer.PNG" />
+    <Content Include="Content\img\logos\SkidSteerBlacktopCrushed.PNG" />
+    <Content Include="Content\img\logos\SkidSteerPipe.PNG" />
+    <Content Include="Content\img\logos\snow_forest.jpg" />
+    <Content Include="Content\img\logos\SweeperDust.PNG" />
+    <Content Include="Content\img\logos\themeforest.jpg" />
+    <Content Include="Content\img\logos\wordpress.jpg" />
+    <Content Include="Content\img\map-image.png" />
+    <Content Include="Content\img\portfolio\dreams-preview.png" />
+    <Content Include="Content\img\portfolio\dreams.png" />
+    <Content Include="Content\img\portfolio\escape-preview.png" />
+    <Content Include="Content\img\portfolio\escape.png" />
+    <Content Include="Content\img\portfolio\golden-preview.png" />
+    <Content Include="Content\img\portfolio\golden.png" />
+    <Content Include="Content\img\portfolio\roundicons-free.png" />
+    <Content Include="Content\img\portfolio\roundicons.png" />
+    <Content Include="Content\img\portfolio\startup-framework-preview.png" />
+    <Content Include="Content\img\portfolio\startup-framework.png" />
+    <Content Include="Content\img\portfolio\treehouse-preview.png" />
+    <Content Include="Content\img\portfolio\treehouse.png" />
+    <Content Include="Content\img\SkidSteer.PNG" />
+    <Content Include="Content\img\team\1.jpg" />
+    <Content Include="Content\img\team\2.jpg" />
+    <Content Include="Content\img\team\3.jpg" />
+    <Content Include="Content\img\team\SkidSteer.PNG" />
+    <Content Include="Content\img\team\SnowBlower.PNG" />
+    <Content Include="Content\img\team\SweeperDust.PNG" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\portfolio-item.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\less\agency.less" />
+    <Content Include="Content\less\mixins.less" />
+    <Content Include="Content\less\variables.less" />
+    <Content Include="Content\mail\contact_me.php" />
+    <Content Include="Content\scss\agency.scss" />
+    <Content Include="Content\scss\_mixins.scss" />
+    <Content Include="Content\scss\_variables.scss" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\vendor\font-awesome\less\core.less" />
+    <Content Include="Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="Content\vendor\font-awesome\less\list.less" />
+    <Content Include="Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Content\vendor\font-awesome\less\path.less" />
+    <Content Include="Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\agency.js" />
+    <Content Include="Scripts\agency.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\contact_me.js" />
+    <Content Include="Scripts\jqBootstrapValidation.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.portfolio.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -199,7 +344,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -234,6 +378,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\AlbumGallery.cshtml" />
+    <Content Include="Views\Home\indexTest.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\Home\Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -245,6 +395,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,7 +8,16 @@ namespace NorthernHandyman.Controllers
 {
     public class HomeController : Controller
     {
+       
+        public ActionResult indexTest()
+        {
+            return View();
+        }
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult AlbumGallery()
         {
             return View();
         }
@@ -26,5 +35,21 @@ namespace NorthernHandyman.Controllers
 
             return View();
         }
+
+        public ActionResult Services()
+        {
+            return View();
+        }
+
+        public ActionResult Videos()
+        {
+            return View();
+        }
+
+        public ActionResult Photos()
+        {
+            return View();
+        }
+
     }
 }
